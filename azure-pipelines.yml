@@ -30,6 +30,6 @@ stages:
       inputs:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/src/main/docker/Dockerfile.jvm'
-        arguments: -t quarkus/demo-rest-json-jvm .
+        arguments: -t quarkus/demo-rest-json-jvm
         tags: |
           $(tag)
