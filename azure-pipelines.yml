@@ -33,6 +33,6 @@ stages:
         arguments: -t quarkus/demo-rest-json-jvm
         buildContext: '$(Build.SourcesDirectory)'
         repository: 'quarkus-az-pipeline'
-        containerRegistry: 'QuarkusIoRegistry'
+        containerRegistry: 'QuayIoRegistry'
         tags: |
           $(tag)
