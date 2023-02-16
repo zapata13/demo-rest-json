@@ -31,7 +31,7 @@ stages:
       inputs:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/src/main/docker/Dockerfile.jvm'
-        arguments: -t quarkus/demo-rest-json-jvm
+        containerRegistry: $(serviceConnection)
         buildContext: '$(Build.SourcesDirectory)'
         repository: $(imageName)
         tags: |
