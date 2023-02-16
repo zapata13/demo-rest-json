@@ -36,10 +36,13 @@ stages:
         repository: $(imageName)
         tags: |
           $(tag)
+          latest
     - task: Docker@2
       displayName: Publicar imagen en Quay.io
       inputs:
         command: push
         repository: $(imageName)
         containerRegistry: $(serviceConnection)
-        tags: $(tag)
+        tags: |
+          $(tag)
+          latest
