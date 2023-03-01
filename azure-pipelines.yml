@@ -20,6 +20,13 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
+    - task: oc-cmd@3
+      inputs:
+        connectionType: 'OpenShift Connection Service'
+        openshiftService: 'OpenShift cluster'
+        version: '4.2'
+        cmd: 'oc project azure-devops'
+      displayName: Seleccionar proyecto / namespace de trabajo
     - task: Maven@3
       displayName: Contruccion de artefacto con Maven
       inputs:
