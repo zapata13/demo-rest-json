@@ -24,7 +24,7 @@ stages:
       inputs:
         connectionType: 'OpenShift Connection Service'
         openshiftService: 'openshift-aws'
-        version: '4.12'
+        version: '4.11'
         cmd: 'oc project azure-devops'
       displayName: Seleccionar proyecto / namespace de trabajo
     - task: Maven@3
