@@ -25,6 +25,10 @@ stages:
       inputs:
         connectionType: 'OpenShift Connection Service'
         openshiftService: openshift-aws
+    - task: oc-cmd@3
+      displayName: Version de openshift oc
+      inputs:
+        cmd: oc version
     - task: Maven@3
       displayName: Contruccion de artefacto con Maven
       inputs:
