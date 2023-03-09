@@ -62,4 +62,4 @@ stages:
       inputs:
         connectionType: 'OpenShift Connection Service'
         openshiftService: $(ocpService)
-        cmd: new-app --image=quay.io/$(imageName):latest --name=$(imageName)
+        cmd: new-app --image=quay.io/$(imageName):latest --name=$(appName)
