@@ -23,8 +23,8 @@ stages:
     - task: oc-setup@3
       displayName: OpenShift oc cli setup
       inputs:
+        connectionType: 'OpenShift Connection Service'
         openshiftService: openshift-aws
-        version: '4.11'
     - task: Maven@3
       displayName: Contruccion de artefacto con Maven
       inputs:
