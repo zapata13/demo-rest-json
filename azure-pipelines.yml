@@ -20,6 +20,11 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
+    - task: oc-setup@3
+      displayName: OpenShift oc cli setup
+      inputs:
+        openshiftService: openshift-aws
+        version: '4.11'
     - task: Maven@3
       displayName: Contruccion de artefacto con Maven
       inputs:
