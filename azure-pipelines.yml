@@ -30,7 +30,7 @@ stages:
       inputs:
         connectionType: 'OpenShift Connection Service'
         openshiftService: $(ocpService)
-        cmd: new-project $(projectName)
+        cmd: project $(projectName)
     - task: Maven@3
       displayName: Contruccion de artefacto con Maven
       inputs:
@@ -62,4 +62,4 @@ stages:
       inputs:
         connectionType: 'OpenShift Connection Service'
         openshiftService: $(ocpService)
-        cmd: new-app --image=quay.io/$(imageName):latest --name=$(appName)
+        cmd: new-app --image=quay.io/$(imageName):latest --name=$(appName) -n $(projectName)
