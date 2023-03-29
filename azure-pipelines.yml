@@ -26,7 +26,14 @@ stages:
         connectionType: 'OpenShift Connection Service'
         openshiftService: openshift-aws
     - task: oc-cmd@3
-      displayName: Crear proyecto
+      displayName: Crear proyecto en OpenShift
+      inputs:
+        connectionType: 'OpenShift Connection Service'
+        openshiftService: $(ocpService)
+        cmd: new-project $(projectName)
+      continueOnError: true
+    - task: oc-cmd@3
+      displayName: Moverse a proyecto en OpenShift
       inputs:
         connectionType: 'OpenShift Connection Service'
         openshiftService: $(ocpService)
