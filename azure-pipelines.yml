@@ -24,7 +24,7 @@ stages:
       displayName: OpenShift oc cli setup
       inputs:
         connectionType: 'OpenShift Connection Service'
-        openshiftService: openshift-aws
+        openshiftService: $(ocpService)
     - task: oc-cmd@3
       displayName: Crear proyecto en OpenShift
       inputs:
