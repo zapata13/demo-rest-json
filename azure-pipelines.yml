@@ -70,3 +70,10 @@ stages:
         connectionType: 'OpenShift Connection Service'
         openshiftService: $(ocpService)
         cmd: new-app --image=quay.io/$(imageName):latest --name=$(appName) -n $(projectName)
+        
+    - task: oc-cmd@3
+      displayName: Exponer ruta de nueva app
+      inputs:
+        connectionType: 'OpenShift Connection Service'
+        openshiftService: $(ocpService)
+        cmd: expose service $(appName)
